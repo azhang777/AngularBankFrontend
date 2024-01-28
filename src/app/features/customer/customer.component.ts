@@ -12,14 +12,20 @@ export class CustomerComponent implements OnInit {
   columns = ['id', 'firstName', 'lastName', 'addresses'];
   constructor(private customerService: CustomerService) {}
 
+  //next callback is used to handle the next value emitted by the observable.
+  //if any errors occur during the observable's lifecycle, the error callback is used
+  //the complete callback is option, it is invoked when the obserable completes its lifecycle, whether successful or not.
   ngOnInit(): void {
-    this.customerService.getCustomers().subscribe(
-      (value) => (this.customers = value),
-      (error) => console.error('Error:', error),
-      () => {
-        let previewCustomers: Customer[] = this.customers;
-        console.log('Complete, fuck ' + JSON.stringify(previewCustomers));
-      }
-    );
+    this.customerService.getCustomers().subscribe({
+      next: (value) => {
+        this.customers = value;
+      },
+      error: (error) => {
+        console.error('Error', error);
+      },
+      complete: () => {
+        console.log('Get Customers has been used.');
+      },
+    });
   }
 }

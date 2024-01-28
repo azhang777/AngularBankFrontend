@@ -9,11 +9,27 @@ import { AccountService } from '../../core/services/account.service';
 })
 export class AccountComponent implements OnInit {
   accounts: Account[] = [];
-  columns = ['accountId', 'type', 'balance', 'rewardPoints', 'customerId'];
+  columns = ['accountId', 'type', 'balance', 'nickname', 'customerId'];
   constructor(private accountService: AccountService) {}
 
   ngOnInit(): void {
-    this.accountService.getAccounts().subscribe(
+    this.accountService.getAccounts().subscribe({
+      next: (value) => {
+        this.accounts = value;
+      },
+      error: (error) => {
+        console.error('Error', error);
+      },
+      complete: () => {
+        console.log('Get Accounts has been used.');
+      },
+    });
+  }
+}
+
+/*
+
+this.accountService.getAccounts().subscribe(
       (value) => (this.accounts = value),
       (error) => console.error('Error:', error),
       () => {
@@ -25,5 +41,4 @@ export class AccountComponent implements OnInit {
         );
       }
     );
-  }
-}
+*/

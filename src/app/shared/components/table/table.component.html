@@ -10,8 +10,10 @@
         {{
           column === "addresses"
             ? getAddressString(item[column])
-            : column === "balance"
-            ? (item[column] | currency : "USD" : true : "1.2-2")
+            : column === "balance" ||
+              column === "payment_amount" ||
+              column === "amount"
+            ? (item[column] | currency : "USD" : "symbol" : "1.2-2")
             : item[column]
         }}
       </td>

@@ -19,6 +19,7 @@ export class AccountService {
           accountId: account.accountId,
           customerId: account.customer.id,
           type: account.type,
+          nickname: account.nickname,
           balance: account.balance,
           rewardPoints: account.rewardPoints,
         }))
