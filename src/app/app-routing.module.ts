@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CustomerComponent } from './customer/customer.component';
-import { AccountComponent } from './account/account.component';
-import { BillComponent } from './bill/bill.component';
-import { WithdrawalComponent } from './withdrawal/withdrawal.component';
-import { DepositComponent } from './deposit/deposit.component';
+import { CustomerComponent } from './features/customer/customer.component';
+import { AccountComponent } from './features/account/account.component';
+import { BillComponent } from './features/bill/bill.component';
+import { WithdrawalComponent } from './features/withdrawal/withdrawal.component';
+import { DepositComponent } from './features/deposit/deposit.component';
 
 const routes: Routes = [
   { path: 'customer', component: CustomerComponent },

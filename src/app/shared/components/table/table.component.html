@@ -6,7 +6,15 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of data">
-      <td *ngFor="let column of columns">{{ item[column] }}</td>
+      <td *ngFor="let column of columns">
+        {{
+          column === "addresses"
+            ? getAddressString(item[column])
+            : column === "balance"
+            ? (item[column] | currency : "USD" : true : "1.2-2")
+            : item[column]
+        }}
+      </td>
     </tr>
   </tbody>
 </table>

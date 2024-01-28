@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Address } from '../../models/address';
 
 @Component({
   selector: 'app-table',
@@ -8,4 +9,13 @@ import { Component, Input } from '@angular/core';
 export class TableComponent {
   @Input() columns: string[] = [];
   @Input() data: any[] = [];
+
+  getAddressString(addresses: Address[]): string {
+    return addresses
+      .map(
+        (address) =>
+          `${address.streetNumber} ${address.streetName}, ${address.city}, ${address.state} ${address.zipCode}`
+      )
+      .join('<br>');
+  }
 }
