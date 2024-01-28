@@ -8,22 +8,19 @@
 
     <div class="row justify-content-center align-items-center text-center g-2">
       <div class="col">
-        <app-navbutton [routerLink]="'/customer'" [buttonName]="'Customer'" />
+        <app-navbutton routerLink="/customers" buttonName="Customers" />
       </div>
       <div class="col">
-        <app-navbutton [routerLink]="'/account'" [buttonName]="'Account'" />
+        <app-navbutton routerLink="/accounts" buttonName="Accounts" />
       </div>
       <div class="col">
-        <app-navbutton [routerLink]="'/bill'" [buttonName]="'Bill'" />
+        <app-navbutton routerLink="/bills" buttonName="Bills" />
       </div>
       <div class="col">
-        <app-navbutton [routerLink]="'/deposit'" [buttonName]="'Deposit'" />
+        <app-navbutton routerLink="/deposits" buttonName="Deposits" />
       </div>
       <div class="col">
-        <app-navbutton
-          [routerLink]="'/withdrawal'"
-          [buttonName]="'Withdrawal'"
-        />
+        <app-navbutton routerLink="/withdrawals" buttonName="Withdrawals" />
       </div>
     </div>
   </nav>

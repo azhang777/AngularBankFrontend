@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Deposit } from '../../shared/models/deposit';
-import { DepositService } from '../../core/services/deposit.service';
+import { Deposit } from '../../../shared/models/deposit';
+import { DepositService } from '../../../core/services/deposit.service';
 
 @Component({
   selector: 'app-deposit',

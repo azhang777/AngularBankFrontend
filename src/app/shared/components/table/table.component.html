@@ -6,7 +6,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of data">
-      <td *ngFor="let column of columns">
+      <td *ngFor="let column of columns" (click)="onRowClick(item)">
         {{
           column === "addresses"
             ? getAddressString(item[column])

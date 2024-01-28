@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Withdrawal } from '../../shared/models/withdrawal';
-import { WithdrawalService } from '../../core/services/withdrawal.service';
+import { Withdrawal } from '../../../shared/models/withdrawal';
+import { WithdrawalService } from '../../../core/services/withdrawal.service';
 
 @Component({
   selector: 'app-withdrawal',
