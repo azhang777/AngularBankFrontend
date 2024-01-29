@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
@@ -18,7 +18,9 @@ import { DepositDetailComponent } from './features/deposit/deposit-detail/deposi
 import { WithdrawalDetailComponent } from './features/withdrawal/withdrawal-detail/withdrawal-detail.component';
 import { BillDetailComponent } from './features/bill/bill-detail/bill-detail.component';
 import { AccountDetailComponent } from './features/account/account-detail/account-detail.component';
+import { CustomerDetailComponent } from './features/customer/customer-detail/customer-detail.component';
 
+//make sure all your components are recognized by angular! that is why your ngFor in CustomerDetailComponent was not working
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +36,16 @@ import { AccountDetailComponent } from './features/account/account-detail/accoun
     DepositDetailComponent,
     WithdrawalDetailComponent,
     BillDetailComponent,
+    CustomerDetailComponent,
     AccountDetailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

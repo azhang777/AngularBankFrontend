@@ -23,7 +23,6 @@ export class TableComponent {
   }
 
   onRowClick(item: any) {
-    console.log(item);
     switch (this.type) {
       case 'customer':
         this.router.navigate(['/customers', item.id]);

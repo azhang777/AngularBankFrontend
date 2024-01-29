@@ -19,7 +19,9 @@ export class CustomerService {
   }
 
   getCustomerById(id: number): Observable<Customer> {
-    return this.httpClient.get<Customer>(`${this.apiUrl}/${id}`);
+    return this.httpClient
+      .get<any>(`${this.apiUrl}/${id}`)
+      .pipe(map((response) => response.body.data));
   }
 
   createCustomer(customer: Customer) {

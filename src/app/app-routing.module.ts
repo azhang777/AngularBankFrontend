@@ -10,9 +10,9 @@ import { AccountDetailComponent } from './features/account/account-detail/accoun
 
 const routes: Routes = [
   { path: 'customers', component: CustomerComponent },
-  { path: 'customers/:customerId', component: CustomerDetailComponent },
+  { path: 'customers/:id', component: CustomerDetailComponent },
   { path: 'accounts', component: AccountComponent },
-  { path: 'accounts/:accountId', component: AccountDetailComponent },
+  { path: 'accounts/:id', component: AccountDetailComponent },
   { path: 'bills', component: BillComponent },
   { path: 'withdrawals', component: WithdrawalComponent },
   { path: 'deposits', component: DepositComponent },

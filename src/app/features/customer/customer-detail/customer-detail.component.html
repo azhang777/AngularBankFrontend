@@ -1,1 +1,12 @@
-<p>customer-detail works!</p>
+<div class="container">
+  <div class="row justify-content-center align-items-center g-2">
+    <div class="col">{{ customerData?.firstName }}</div>
+    <div class="col">{{ customerData?.lastName }}</div>
+  </div>
+  <div class="row justify-content-center align-items-center g-2">
+    <div class="col" *ngFor="let element of address">
+      {{ element.streetNumber }} {{ element.streetName }} {{ element.city }}
+      {{ element.state }} {{ element.zipCode }}
+    </div>
+  </div>
+</div>
