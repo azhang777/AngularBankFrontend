@@ -17,7 +17,6 @@ import { Address } from '../../../shared/models/address';
 export class CustomerDetailComponent implements OnInit {
   id: number;
   customerData: Customer;
-  address: Address[];
   constructor(
     private route: ActivatedRoute,
     private customerService: CustomerService
@@ -38,8 +37,6 @@ that is passed as an argument to another function, with the expectation that it 
       this.customerService.getCustomerById(this.id).subscribe({
         next: (value) => {
           this.customerData = value;
-          this.address = this.customerData?.addresses;
-          console.log(JSON.stringify(this.customerData));
         },
         error: (error) => {
           console.error('Error', error);

@@ -1,7 +1,8 @@
 export class Account {
-  accountId: number;
+  id: number;
   customerId: number;
   type: string;
   balance: number;
+  nickname: string;
   rewardPoints: number;
 }

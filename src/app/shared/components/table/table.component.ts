@@ -28,7 +28,7 @@ export class TableComponent {
         this.router.navigate(['/customers', item.id]);
         break;
       case 'account':
-        this.router.navigate(['/accounts', item.accountId]);
+        this.router.navigate(['/accounts', item.id]);
         break;
       default:
         console.warn('Unsupported type');

@@ -16,7 +16,7 @@ export class AccountService {
     return this.httpClient.get<any>(`${this.apiUrl}`).pipe(
       map((response) =>
         response.body.data.map((account: any) => ({
-          accountId: account.accountId,
+          id: account.accountId,
           customerId: account.customer.id,
           type: account.type,
           nickname: account.nickname,
@@ -28,7 +28,9 @@ export class AccountService {
   }
 
   getAccountById(id: number): Observable<Account> {
-    return this.httpClient.get<Account>(`${this.apiUrl}/${id}`);
+    return this.httpClient
+      .get<any>(`${this.apiUrl}/${id}`)
+      .pipe(map((response) => response.data));
   }
 
   createAccount(customerId: number, account: Account) {

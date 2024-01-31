@@ -1,1 +1,16 @@
-<p>account-detail works!</p>
+<div class="container bg-body-tertiary p-5 mt-5 rounded-4">
+  <div class="row justify-content-center align-items-center text-center g-2">
+    <div class="col-12">
+      <h1>Type: {{ accountData?.type }}</h1>
+    </div>
+    <div class="col-12">
+      <h1>Nick Name: {{ accountData?.nickname }}</h1>
+    </div>
+    <div class="col-12">
+      <h1>
+        Balance:
+        {{ accountData?.balance | currency : "USD" : "symbol" : "1.2-2" }}
+      </h1>
+    </div>
+  </div>
+</div>

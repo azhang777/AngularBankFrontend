@@ -9,7 +9,7 @@ import { AccountService } from '../../../core/services/account.service';
 })
 export class AccountComponent implements OnInit {
   accounts: Account[] = [];
-  columns = ['accountId', 'type', 'balance', 'nickname', 'customerId'];
+  columns = ['id', 'type', 'balance', 'nickname', 'customerId'];
   constructor(private accountService: AccountService) {}
 
   ngOnInit(): void {
