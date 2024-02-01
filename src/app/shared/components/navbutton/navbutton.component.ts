@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class NavbuttonComponent {
   @Input() routerLinkValue: string | any[];
   @Input() buttonName: string;
+  @Input() isSuccess: boolean;
 }

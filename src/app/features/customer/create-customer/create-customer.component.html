@@ -1,0 +1,47 @@
+<div class="container bg-body-tertiary p-5 mt-5 rounded-4">
+  <h1 class="text-center">Create Customer</h1>
+  <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName" />
+
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName" />
+    <p>Complete the form to enable button.</p>
+
+    <div formGroupName="address">
+      <h2>Address</h2>
+      <label for="street">Street:</label>
+      <input id="street" type="text" formControlName="street" />
+
+      <label for="city">City:</label>
+      <input id="city" type="text" formControlName="city" />
+
+      <label for="state">City:</label>
+      <input id="state" type="text" formControlName="state" />
+
+      <label for="zip">City:</label>
+      <input id="zip" type="text" formControlName="zip" />
+    </div>
+
+    <div formArrayName="aliases">
+      <h2>Aliases</h2>
+      <div *ngFor="let alias of aliases.controls; let i = index">
+        <label for="alias-{{ i }}">Alias:</label>
+        <input id="alias-{{ i }}" type="text" [formControlName]="i" />
+      </div>
+      <button (click)="addAlias()">Add another</button>
+      <button *ngIf="aliases.controls.length > 1" (click)="removeAlias()">
+        Remove
+      </button>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!customerForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+
+  <button (click)="updateProfile()">Update</button>
+</div>

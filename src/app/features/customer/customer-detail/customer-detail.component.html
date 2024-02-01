@@ -1,4 +1,4 @@
-<div class="container bg-body-tertiary p-5 mt-5 rounded-4">
+<div *ngIf="customerData" class="container bg-body-tertiary p-5 mt-5 rounded-4">
   <div class="row justify-content-center align-items-center text-center g-2">
     <div class="col-12">
       <h1>First Name: {{ customerData?.firstName }}</h1>
@@ -6,6 +6,7 @@
     <div class="col-12">
       <h1>Last Name: {{ customerData?.lastName }}</h1>
     </div>
+
     <div
       class="col-12"
       *ngFor="let element of customerData.addresses; index as i"
@@ -17,7 +18,11 @@
       </h1>
     </div>
     <div class="col-12">
-      <app-navbutton routerLink="/createAccount" buttonName="Create Account" />
+      <app-navbutton
+        [routerLink]="['/customers', customerData.id, 'create']"
+        buttonName="Create Account"
+        isSuccess="true"
+      />
     </div>
   </div>
 </div>

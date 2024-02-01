@@ -34,10 +34,16 @@ export class AccountService {
   }
 
   createAccount(customerId: number, account: Account) {
-    return this.httpClient.post<Account>(
-      `${this.createAccountUrl}/${customerId}/accounts`,
-      account
-    );
+    return this.httpClient
+      .post<Account>(`${this.createAccountUrl}/${customerId}/accounts`, account)
+      .subscribe({
+        next: (value) => {
+          console.log('Account creation successful', value);
+        },
+        error: (error) => {
+          console.log('Error creating account:', error);
+        },
+      });
   }
 
   updateAccount(id: number, account: Account) {

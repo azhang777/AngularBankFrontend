@@ -7,10 +7,14 @@ import { WithdrawalComponent } from './features/withdrawal/withdrawals/withdrawa
 import { DepositComponent } from './features/deposit/deposits/deposit.component';
 import { CustomerDetailComponent } from './features/customer/customer-detail/customer-detail.component';
 import { AccountDetailComponent } from './features/account/account-detail/account-detail.component';
+import { CreateAccountComponent } from './features/account/create-account/create-account.component';
+import { CreateCustomerComponent } from './features/customer/create-customer/create-customer.component';
 
 const routes: Routes = [
   { path: 'customers', component: CustomerComponent },
+  { path: 'create', component: CreateCustomerComponent },
   { path: 'customers/:id', component: CustomerDetailComponent },
+  { path: 'customers/:id/create', component: CreateAccountComponent },
   { path: 'accounts', component: AccountComponent },
   { path: 'accounts/:id', component: AccountDetailComponent },
   { path: 'bills', component: BillComponent },

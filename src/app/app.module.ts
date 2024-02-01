@@ -20,6 +20,7 @@ import { BillDetailComponent } from './features/bill/bill-detail/bill-detail.com
 import { AccountDetailComponent } from './features/account/account-detail/account-detail.component';
 import { CustomerDetailComponent } from './features/customer/customer-detail/customer-detail.component';
 import { CreateAccountComponent } from './features/account/create-account/create-account.component';
+import { CreateCustomerComponent } from './features/customer/create-customer/create-customer.component';
 
 //make sure all your components are recognized by angular! that is why your ngFor in CustomerDetailComponent was not working
 @NgModule({
@@ -39,7 +40,6 @@ import { CreateAccountComponent } from './features/account/create-account/create
     BillDetailComponent,
     CustomerDetailComponent,
     AccountDetailComponent,
-    CreateAccountComponent,
   ],
   imports: [
     CommonModule,
@@ -47,6 +47,8 @@ import { CreateAccountComponent } from './features/account/create-account/create
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    CreateCustomerComponent,
+    CreateAccountComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

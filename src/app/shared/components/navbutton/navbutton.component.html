@@ -1,5 +1,12 @@
 <div class="btn-group">
-  <button class="btn btn-primary rounded-pill">
+  <button
+    [ngClass]="{
+      btn: true,
+      'btn-primary': !isSuccess,
+      'btn-success': isSuccess,
+      'rounded-pill': true
+    }"
+  >
     {{ buttonName }}
   </button>
 </div>

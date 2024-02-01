@@ -1,3 +1,12 @@
-<div class="container py-5">
-  <app-table [columns]="columns" [data]="customers" type="customer" />
+<div class="container py-3">
+  <div class="row text-center pb-5">
+    <app-navbutton
+      routerLink="/create"
+      buttonName="Create Customer"
+      isSuccess="true"
+    />
+  </div>
+  <div class="row">
+    <app-table [columns]="columns" [data]="customers" type="customer" />
+  </div>
 </div>
